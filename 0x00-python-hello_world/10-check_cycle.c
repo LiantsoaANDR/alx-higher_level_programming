@@ -6,4 +6,20 @@
  */
 int check_cycle(listint_t *list)
 {
+	struct listint_s *current, *temp;
+
+	if (!list || !list->next)
+		return (0);
+
+	current = list;
+	temp = list;
+
+	while (current)
+	{
+		current = current->next;
+		if (current == temp)
+			return (1);
+	}
+
+	return (0);
 }
