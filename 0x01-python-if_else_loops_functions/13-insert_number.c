@@ -42,7 +42,10 @@ listint_t *insert_node(listint_t **head, int number)
 	if (check)
 		before->next = new;
 	if (!check)
+	{
 		new = *head;
+		new->n = number;
+	}
 
 	new->next = current;
 
