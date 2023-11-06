@@ -28,7 +28,7 @@ listint_t *add_node(listint_t **head, const int n)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *reversed, *reversed_current;
+	listint_t *current, *reversed = NULL, *reversed_current;
 
 	if (!head || !(*head))
 		return (1);
