@@ -52,5 +52,6 @@ int is_palindrome(listint_t **head)
 		reversed = reversed->next;
 	}
 
+	free_listint(reversed);
 	return (1);
 }
