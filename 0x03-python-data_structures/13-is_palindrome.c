@@ -4,7 +4,7 @@
 /**
  * add_node - adds a new node at the beginning of a listint_t list
  * @head: pointer to the pointer head
- * @n: the int to be included in the new node
+ * @n: the integer to be included in the new node
  * Return: the address of the new element, or NULL if it failed
  */
 listint_t *add_node(listint_t **head, const int n)
