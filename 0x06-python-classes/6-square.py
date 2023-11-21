@@ -18,8 +18,8 @@ class Square:
             position: a tuple of 2 ints that indicate where the
                       square begins to spawn
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -60,7 +60,7 @@ class Square:
         """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if any(type(i) != int for i in value):
+        if not isinstance(value[0], int) or not isinstance(value[0], int):
             raise TypeError("position must be a tuple of 2 positive integers")
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
