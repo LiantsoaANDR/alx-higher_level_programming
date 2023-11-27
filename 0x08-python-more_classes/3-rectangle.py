@@ -98,4 +98,5 @@ class Rectangle:
         for i in range(0, self.__height):
             rect += "#" * self.__width
             rect += "\n"
+        rect = rect[:-1]
         return rect
