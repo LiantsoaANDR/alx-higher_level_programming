@@ -13,10 +13,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     indentation = ['.', '?', ':']
+    first = True
     flag = True
     for char in text:
-        if not flag:
+        if not flag or first:
             if char != ' ':
+                first = False
                 flag = True
             else:
                 continue

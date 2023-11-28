@@ -1,0 +1,52 @@
+===========================================================
+Test for task 4, text_indentation
+===========================================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("First string? test")
+First string?
+<BLANKLINE>
+test
+
+>>> text_indentation("  String with space at the beginning. Test")
+String with space at the beginning.
+<BLANKLINE>
+Test
+
+>>> text_indentation("No delim")
+No delim
+
+>>> text_indentation("Testing. All? Delim: uwu")
+Testing.
+<BLANKLINE>
+All?
+<BLANKLINE>
+Delim:
+<BLANKLINE>
+uwu
+
+>>> text_indentation("                 ")
+
+>>> text_indentation("")
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+
+Errors:
+>>> text_indentation(1)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("excecive", "args")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
