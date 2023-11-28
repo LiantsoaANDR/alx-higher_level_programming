@@ -16,7 +16,8 @@ def text_indentation(text):
     flag = 0
     for char in text:
         if flag == 1:
-            flag = 0
+            if char != ' ':
+                flag = 0
             continue
         if char not in indentation:
             print(char, end="")
