@@ -14,6 +14,14 @@ Test for task 1, matrix_divided
 >>> print(matrix_divided(matrix, 2))
 [[1.0, 2.0, 3.0], [-3.0, -2.0, -1.0]]
 
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix_divided(matrix, 1, 2)
+Traceback (most recent call last):
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
 >>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
