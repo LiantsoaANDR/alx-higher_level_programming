@@ -26,10 +26,9 @@ def matrix_divided(matrix, div):
             raise TypeError(error1)
         if len(row) != len(matrix[0]):
             raise TypeError(error2)
-
-            for e in row:
-                if not isinstance(e, int) and not isinstance(e, float):
-                    raise TypeError(error1)
+        for e in row:
+            if not isinstance(e, int) and not isinstance(e, float):
+                raise TypeError(error1)
 
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError(error3)
