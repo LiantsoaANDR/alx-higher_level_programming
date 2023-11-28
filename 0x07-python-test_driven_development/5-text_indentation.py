@@ -13,14 +13,15 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     indentation = ['.', '?', ':']
-    flag = 0
+    flag = True
     for char in text:
-        if flag == 1:
+        if not flag:
             if char != ' ':
-                flag = 0
-            continue
+                flag = True
+            else:
+                continue
         if char not in indentation:
             print(char, end="")
         else:
             print("{}\n".format(char))
-            flag = 1
+            flag = False
