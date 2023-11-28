@@ -32,3 +32,7 @@ TypeError: first_name must be a string
 >>> say_my_name("to", "much", "args")
 Traceback (most recent call last):
 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+>>> say_my_name("to", "much", "args", "again")
+Traceback (most recent call last):
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 4 were given
