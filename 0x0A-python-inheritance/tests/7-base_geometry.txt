@@ -18,3 +18,7 @@ ValueError: age must be greater than 0
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
+
+>>> bg.integer_validator("Toomuch", 4, 5)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
