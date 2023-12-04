@@ -16,7 +16,7 @@ class BaseGeometry:
             name: a name, as a string, that has a value
             value: the value, should be an integer
         """
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
