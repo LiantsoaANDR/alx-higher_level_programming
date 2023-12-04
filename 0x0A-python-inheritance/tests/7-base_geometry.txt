@@ -1,0 +1,20 @@
+=================================================
+TEST CASES FOR 7-base_geometry.py
+=================================================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("Test1", 11)
+
+>>> bg.integer_validator("Test2", "string")
+Traceback (most recent call last):
+TypeError: Test2 must be an integer
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
