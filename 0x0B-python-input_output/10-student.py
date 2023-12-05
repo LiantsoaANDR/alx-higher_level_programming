@@ -25,7 +25,12 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """returns a dictionary representation of a Student instance"""
+        """
+        returns a dictionary representation of a Student instance
+
+        Args:
+            attrs: The specified attrs to be returned
+        """
         if attrs is None:
             return self.__dict__
 
@@ -33,5 +38,4 @@ class Student:
         for a in attrs:
             if hasattr(self, a):
                 my_dict[a] = getattr(self, a)
-
         return my_dict
