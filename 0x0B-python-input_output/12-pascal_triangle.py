@@ -18,10 +18,10 @@ def pascal_triangle(n):
     for i in range(0, n):
         row = [1] * (i + 1)
 
-        for j in range(0, len(row):
-            if i == 0 or i == n - 1:
-                row[j] = 1
-            else:
+        if len(row) > 2:
+            for j in range(0, len(row)):
+                if j == len(row) - 1:
+                    continue
                 row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
 
         triangle.append(row)
