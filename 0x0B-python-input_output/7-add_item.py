@@ -13,7 +13,7 @@ list_json = []
 if os.path.exists(filename):
     list_json = load_from_json_f(filename)
 
-for i in range(0, len(sys.argv)):
+for i in range(1, len(sys.argv)):
     list_json.append(sys.argv[i])
 
 save_to_json_f(list_json, filename)
