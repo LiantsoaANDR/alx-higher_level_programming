@@ -29,11 +29,9 @@ class Student:
         if attrs is None:
             return self.__dict__
 
-        value = {}
-        for a in attrs:
-            if a in self.__dict__:
-                value.append(self.__dict__[a])
         my_dict = {}
-        for i in range(0, len(attrs)):
-            my_dict.append("'{}': '{}'".format(attrs[i], value[i]))
+        for a in attrs:
+            if hasattr(self, a):
+                my_dict[a] = getattr(self, a)
+
         return my_dict
