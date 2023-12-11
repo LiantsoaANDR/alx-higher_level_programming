@@ -99,10 +99,12 @@ class Rectangle(Base):
 
     def display(self):
         """Prints in stdout the Rectangle with the character # """
-        rect = "#" * self.__width
+        y = "\n" * self.__y
+        rect = " " * self.__x
+        rect += "#" * self.__width
         rect += "\n"
         rect *= self.__height
-        print("{}".format(rect), end="")
+        print("{}{}".format(y, rect), end="")
 
     def __str__(self):
         """Returns the characteristic of the rectangle"""
