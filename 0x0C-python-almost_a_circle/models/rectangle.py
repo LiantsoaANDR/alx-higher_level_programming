@@ -28,7 +28,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         """Returns the width of the rectangle"""
@@ -92,3 +92,19 @@ class Rectangle(Base):
         """
         self.int_validator("y", value, 1)
         self.__y = value
+
+    def area(self):
+        """Returns the area value of the Rectangle"""
+        return (self.__width * self.__height)
+
+    def display(self):
+        """Prints in stdout the Rectangle with the character # """
+        rect = "#" * self.__width
+        rect += "\n"
+        rect *= self.__height
+        print("{}".format(rect), end="")
+
+    def __str__(self):
+        """Returns the characteristic of the rectangle"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format
+                (self.id, self.__x, self.__y, self.__width, self.__height))
