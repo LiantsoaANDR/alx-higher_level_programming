@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module for our base of all other classes in this project"""
+from json import dumps
 
 
 class Base:
@@ -39,3 +40,27 @@ class Base:
 
         if value < 0 and flag == 1:
             raise ValueError("{} must be >= 0".format(name))
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        Transforms a dictionary into a JSON string
+
+        Args:
+            list_dictionaries: the dictionary
+
+        Return: the JSON string representation of list_dictionaries
+        """
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
+        return dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        writes the JSON string representation of list_objs to a file
+
+        Args:
+            list_objs: is a list of instances who inherits of Base
+                       example: list of Rectangle or list of Square instances
+        """
