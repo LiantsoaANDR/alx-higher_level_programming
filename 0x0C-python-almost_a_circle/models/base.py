@@ -71,7 +71,7 @@ class Base:
         if list_objs:
             json_string = cls.to_json_string([obj.to_dictionary()
                                              for obj in list_objs])
-        with open(filename, "w") as f:
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(json_string)
 
     @staticmethod
@@ -113,5 +113,5 @@ class Base:
 
         with open(filename, "r", encoding="utf-8") as f:
             json_string = f.read()
-            json_list = loads(json_string)
+            json_list = cls.from_json_string(json_string)
             return [cls.create(**d) for d in json_list]
