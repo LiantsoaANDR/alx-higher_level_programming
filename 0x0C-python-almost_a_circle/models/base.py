@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for our base of all other classes in this project"""
 from json import dumps, loads
-import os
+import os.path
 
 
 class Base:
