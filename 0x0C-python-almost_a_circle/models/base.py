@@ -35,7 +35,7 @@ class Base:
             raise TypeError("{} must be an integer".format(name))
 
         if value <= 0 and flag == 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError("{} must > 0".format(name))
 
         if value < 0 and flag == 1:
-            raise ValueError("{} must be positive".format(name))
+            raise ValueError("{} must be >= 0".format(name))
