@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for our base of all other classes in this project"""
-from json import dumps
+from json import dumps, loads
+import os
 
 
 class Base:
@@ -72,3 +73,45 @@ class Base:
                                              for obj in list_objs])
         with open(filename, "w") as f:
             f.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        gives the list of the JSON string representation json_string
+
+        Args:
+            json_string: a string representing a list of dictionaries
+
+        Return: the list of the JSON string representation json_string
+        """
+        if json_string is None:
+            return []
+        return loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+         returns an instance with all attributes already set
+
+        Args:
+            **dictionary can be thought of as a double pointer to a dictionary
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 4)
+        else:
+            dummy = cls(2)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+
+        filename = cls.__name__ + ".json"
+        if not os.path.exists(filename):
+            return []
+
+        with open(filename, "r") as f:
+            json_string = f.read()
+            json_list = loads(json_string)
+            return (cls.create(**d) for d in json_list)
