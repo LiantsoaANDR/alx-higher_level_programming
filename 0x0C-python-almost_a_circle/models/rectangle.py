@@ -11,6 +11,7 @@ class Rectangle(Base):
         width: its width
         height: its height
         x, y: describe the position of the rectangle
+        id: its id
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
