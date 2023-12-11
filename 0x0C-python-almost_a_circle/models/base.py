@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for our base of all other classes in this project"""
 from json import dumps, loads
-import os.path
+from os import path
 
 
 class Base:
@@ -108,10 +108,10 @@ class Base:
         """returns a list of instances"""
 
         filename = cls.__name__ + ".json"
-        if not os.path.exists(filename):
+        if not path.exists(filename):
             return []
 
-        with open(filename, "r") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             json_string = f.read()
             json_list = loads(json_string)
-            return (cls.create(**d) for d in json_list)
+            return [cls.create(**d) for d in json_list]
