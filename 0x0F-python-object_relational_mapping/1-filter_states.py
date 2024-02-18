@@ -24,4 +24,5 @@ if __name__ == "__main__":
     for row in data:
         print(row)
 
+    cursor.close()
     db.close()
