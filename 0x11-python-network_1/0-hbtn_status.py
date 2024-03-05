@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# script that fetches https://alx-intranet.hbtn.io/status
+
 import urllib.request
 
 url = 'https://alx-intranet.hbtn.io/status'
